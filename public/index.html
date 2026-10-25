@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>To-Do Pro</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+
+  <section id="authView" hidden>
+    <h1>My Tasks</h1>
+    <form class="card auth" id="authForm">
+      <h2>Log in or create an account</h2>
+      <input id="username" type="text" placeholder="Username" autocomplete="username" maxlength="30" required>
+      <input id="password" type="password" placeholder="Password (6+ characters)" autocomplete="current-password" maxlength="72" required>
+      <div class="error" id="authError"></div>
+      <div class="row">
+        <button type="submit">Log in</button>
+        <button type="button" class="secondary" id="registerBtn">Create account</button>
+      </div>
+    </form>
+  </section>
+
+  <section id="appView" hidden>
+    <div class="topbar">
+      <h1>My Tasks</h1>
+      <div class="user"><span id="who"></span> <button class="secondary small" id="logoutBtn">Log out</button></div>
+    </div>
+    <div class="card">
+      <div class="add">
+        <input id="newTask" type="text" placeholder="What needs doing?" maxlength="200" autocomplete="off">
+        <select id="newPriority" aria-label="Priority">
+          <option value="low">Low</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High</option>
+        </select>
+        <input id="newDue" type="date" aria-label="Due date">
+        <button id="addBtn">Add</button>
+      </div>
+      <ul id="list"></ul>
+      <div class="footer">
+        <span id="count"></span>
+        <div class="filters" id="filters">
+          <button data-f="all" class="active">All</button>
+          <button data-f="active">Active</button>
+          <button data-f="done">Done</button>
+        </div>
+        <button class="clear" id="clearBtn">Clear completed</button>
+      </div>
+    </div>
+    <div class="error" id="appError"></div>
+    <div class="hint">Drag ⋮⋮ to reorder (on the All tab). Double-click a task to edit it.</div>
+  </section>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
